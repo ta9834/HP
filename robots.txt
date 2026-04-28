@@ -35,4 +35,4 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://www.pas-planning.co.jp/sitemap.xml
+Sitemap: https://pas-planning.co.jp/sitemap.xml
