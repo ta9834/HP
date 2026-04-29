@@ -811,6 +811,7 @@ function StaffModal({ staff, onClose }) {
         }
         @media(max-width:720px){
           .modal-overlay{ align-items:flex-start !important; padding:88px 16px 16px !important; }
+          .modal-content{ padding:20px 20px 28px !important; }
           .staff-modal-inner{
             max-height: calc(100vh - 104px) !important;
             max-height: calc(100dvh - 104px) !important;
