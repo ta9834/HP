@@ -87,7 +87,12 @@
     --font-en: "Montserrat", "Inter", sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { background: var(--bg); overflow-x: hidden; }
+  html {
+    background: var(--bg);
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
   html, body {
     color: var(--ink);
     font-family: var(--font-jp);
@@ -112,10 +117,12 @@
       word-break: auto-phrase;
     }
   }
-  /* 最終行が1〜2文字だけ残る「孤児行」を回避（Chrome 117+ / Safari 17.5+） */
-  @supports (text-wrap: pretty) {
-    p, li, dd {
-      text-wrap: pretty;
+  /* 最終行が1〜2文字だけ残る「孤児行」を回避（デスクトップのみ適用） */
+  @media (min-width: 821px) {
+    @supports (text-wrap: pretty) {
+      p, li, dd {
+        text-wrap: pretty;
+      }
     }
   }
   /* 見出し・短いリード文の行長を揃える（Chrome 114+ / Safari 17.5+） */
