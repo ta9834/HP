@@ -144,7 +144,7 @@ function ContactBand() {
              style={{
                display: "flex", alignItems: "center", justifyContent: "space-between",
                background: "#fff", borderRadius: 999,
-               padding: "22px 30px 22px 38px", minWidth: 340,
+               padding: "22px 30px 22px 38px", minWidth: "min(340px, 100%)",
                boxShadow: "0 8px 24px -8px rgba(60,40,120,0.2)",
                color: "#2a2340", fontWeight: 600, fontSize: 16, gap: 20,
                transition: "transform .3s",
