@@ -318,12 +318,13 @@ function FormLayout({ form, up, sent, setSent, deptOptions, inquiryPH, heading, 
           </Reveal>
         ) : (
           <>
+            <style>{`@media(max-width:640px){.form-section-heading{font-size:17px!important;letter-spacing:0!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}}`}</style>
             <Reveal>
               <div style={{ display: "flex", alignItems: "baseline", gap: 16, marginBottom: 8 }}>
-                <h2 style={{ fontSize: 26, fontWeight: 700, letterSpacing: "0.04em" }}>{heading}</h2>
+                <h2 className="form-section-heading" style={{ fontSize: 26, fontWeight: 700, letterSpacing: "0.04em" }}>{heading}</h2>
               </div>
               <p style={{ fontSize: 12.5, color: "var(--ink-3)", marginBottom: 36, lineHeight: 1.9 }}>
-                {phoneNote}　<span style={{ color: "var(--pur-3)" }}>*</span> は入力必須項目です。
+                {phoneNote}
               </p>
             </Reveal>
 

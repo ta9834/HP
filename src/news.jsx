@@ -195,7 +195,8 @@ function NewsDetailPage({ id }) {
             <span className="en" style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.05em" }}>{n.date}</span>
             <span style={{ fontSize: 11, padding: "5px 14px", background: "var(--bg-2)", borderRadius: 999, color: "var(--ink-2)" }}>{n.cat}</span>
           </div>
-          <h1 style={{ fontSize: "clamp(26px, 3.4vw, 38px)", fontWeight: 700, lineHeight: 1.55, letterSpacing: "0.01em" }}>{n.title}</h1>
+          <h1 className="news-detail-h1" style={{ fontSize: "clamp(26px, 3.4vw, 38px)", fontWeight: 700, lineHeight: 1.55, letterSpacing: "0.01em" }}>{n.title}</h1>
+          <style>{`@media(max-width:640px){.news-detail-h1{font-size:19px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}}`}</style>
         </div>
       </section>
 
