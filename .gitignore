@@ -1,0 +1,40 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Git管理から除外するファイル・フォルダ
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# GitHubにアップロードしないフォルダ
+tools/
+uploads/
+screenshots/
+お問い合わせ/
+.claude/
+HP/
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# エディタ設定
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ログファイル
+*.log
+npm-debug.log*
+
+# 一時ファイル・バックアップ
+*.bak
+*.tmp
+*.backup
+*~$*
+
+# 機密情報（万一の保護）
+*.env
+*.env.local
+secrets.json
+credentials.json
