@@ -115,7 +115,7 @@ function getRecaptchaToken() {
 }
 
 
-function FormLayout({ form, up, sent, setSent, deptOptions, inquiryPH, heading, phoneNote, kind }) {
+function FormLayout({ form, setForm, up, sent, setSent, deptOptions, inquiryPH, heading, phoneNote, kind }) {
   const [errors, setErrors] = React.useState({});
   const [confirming, setConfirming] = React.useState(false);
   const [submitting, setSubmitting] = React.useState(false);
@@ -123,6 +123,12 @@ function FormLayout({ form, up, sent, setSent, deptOptions, inquiryPH, heading, 
   const composingNameRef = React.useRef("");
   const confirmHeadingRef = React.useRef(null);
   const sentHeadingRef = React.useRef(null);
+
+  // フォームを初期状態へリセット（送信完了後や「入力内容をリセット」で使用）
+  const resetForm = () => {
+    setForm({ dept: "", customerType: "", company: "", name: "", kana: "", email: "", tel: "", address: "", inquiry: "", meeting: "", agree: false });
+    setErrors({});
+  };
 
   // 画面切替時のスクロール制御
   // - 完了画面 ：「THANK YOU」見出しまでスクロール
@@ -201,7 +207,7 @@ function FormLayout({ form, up, sent, setSent, deptOptions, inquiryPH, heading, 
                 自動返信メールを送付いたしました。担当者より2営業日以内にご連絡いたします。<br/>
                 万一、自動返信メールが届かない場合はお電話にてご確認ください。
               </p>
-              <button onClick={() => { setSent(false); setConfirming(false); setSubmitError(""); }}
+              <button onClick={() => { setSent(false); setConfirming(false); setSubmitError(""); resetForm(); }}
                       className="pill-btn" style={{ marginTop: 32 }}>トップへ戻る</button>
             </div>
           </Reveal>
@@ -466,7 +472,7 @@ function FormLayout({ form, up, sent, setSent, deptOptions, inquiryPH, heading, 
                     background: "rgba(255,255,255,0.15)", flexShrink: 0,
                   }}>▸</span>
                 </button>
-                <button type="reset" onClick={() => { up("dept", ""); up("customerType", ""); up("company", ""); up("name", ""); up("kana", ""); up("email", ""); up("tel", ""); up("address", ""); up("inquiry", ""); up("meeting", ""); up("agree", false); setErrors({}); }}
+                <button type="reset" onClick={() => resetForm()}
                         style={{
                           fontSize: 13, color: "var(--ink-2)",
                           textDecoration: "underline", cursor: "pointer", background: "none", border: "none",
