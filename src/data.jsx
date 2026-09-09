@@ -5,7 +5,6 @@ const COMPANY = {
   tag: "Professional Adviser Service",
   established: "2021年8月",
   ceo: "小島 拓也",
-  director: "阿部 龍一",
   tel: "029-877-6322",
   fax: "029-877-6323",
   address: "〒300-3261 茨城県つくば市花畑3丁目13番地10 ヤマグチビル3階",
